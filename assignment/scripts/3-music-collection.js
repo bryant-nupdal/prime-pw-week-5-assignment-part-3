@@ -1,20 +1,26 @@
 console.log('***** Music Collection *****')
 let collection = [];
-function addToCollection (title, artist, yearPublished) {
+function addToCollection (title, artist, yearPublished, songTitle, songDuration) {
   let albumInfo = { title: title,
                     artist: artist,
-                    yearPublished: yearPublished
+                    yearPublished: yearPublished,
+                    tracks: [
+                      {
+                      title: songTitle,
+                      duration: songDuration
+                    }//End of object 'tracks'
+                    ]
      // Left of colon is the key | To the right is the value
                   } //End of Object 'albumInfo'
   collection.push(albumInfo);
   return collection;
 }//end of addToCollection function
-addToCollection('This Ones For You Too', 'Luke Combs', '2017' );
-addToCollection('What You See Isnt Always What You Get', 'Luke Combs', '2020' );
-addToCollection('I Decided', 'Big Sean', '2017' );
-addToCollection('TV','Tai Verdes', '2021' );
-addToCollection('Tickets To My Downfall', 'Machine Gun Kelly', '2020' );
-addToCollection('State Im In', 'Filmore', '2020' );
+addToCollection('This Ones For You Too', 'Luke Combs', '2017', 'Out There', '3:23');
+addToCollection('What You See Isnt Always What You Get', 'Luke Combs', '2020', 'Beer Never Broke My Heart', '3:06' );
+addToCollection('I Decided', 'Big Sean', '2017', 'Moves', '2:23' );
+addToCollection('TV','Tai Verdes', '2021', 'A-OK', '2:54' );
+addToCollection('Tickets To My Downfall', 'Machine Gun Kelly', '2020', 'Bloody Valentine', '3:25' );
+addToCollection('State Im In', 'Filmore', '2020', 'Nothings Better', '3:13' );
 // Added 6 albums to the function to be put in collection array--
 console.log(collection);// log the collection array to console
 
@@ -61,4 +67,4 @@ function search( artist, year ){
 }//End of Function
 console.log(search('Ray Charles', '1957'));
 console.log(search('Filmore', '2020'));
-console.log(search());
+console.log(search('',));
